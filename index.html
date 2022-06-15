@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MEME-Generator</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body onload="init()">
+    <header class="main-header">
+      <img src="images/LOGO.png" alt="" class="logo" />
+      <nav>
+        <button class="btn btn-gal">Gallery</button>
+        <button class="btn btn-saved">Saved</button>
+        <button class="btn btn-about">Abount</button>
+      </nav>
+    </header>
+
+    <main class="meme-gallery">
+      <nav class="nav-gallery">
+        <div class="search">
+          <input type="text" class="search-input" placeholder="Search..." />
+          <select name="searchKeywords" class="select-keyWords">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+        </div>
+      </nav>
+      <div class="images-container"></div>
+    </main>
+
+    <section class="editor">
+      <div class="canvas-container">
+        <canvas id="meme"></canvas>
+      </div>
+      <div class="edit-section"></div>
+    </section>
+    <script src="/js/controller/main-controller.js"></script>
+    <script src="/js/service/gallery-service.js"></script>
+  </body>
+</html>
