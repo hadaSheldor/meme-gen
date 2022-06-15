@@ -5,20 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MEME-Generator</title>
+    <script
+      src="https://kit.fontawesome.com/764500184e.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body onload="init()">
     <header class="main-header">
       <img src="images/LOGO.png" alt="" class="logo" />
       <nav>
-        <button class="btn btn-gal">Gallery</button>
-        <button class="btn btn-saved">Saved</button>
+        <button class="btn btn-gal" onclick="onMoveToPage('meme-gallery')">
+          Gallery
+        </button>
+        <button class="btn btn-memes" onclick="onMoveToPage('meme-editor')">
+          Memes
+        </button>
         <button class="btn btn-about">Abount</button>
       </nav>
     </header>
 
     <main class="meme-gallery">
-      <nav class="nav-gallery">
+      <!-- <nav class="nav-gallery">
         <div class="search">
           <input type="text" class="search-input" placeholder="Search..." />
           <select name="searchKeywords" class="select-keyWords">
@@ -30,17 +38,50 @@
             <option value="6">6</option>
           </select>
         </div>
-      </nav>
+      </nav> -->
       <div class="images-container"></div>
     </main>
 
-    <section class="editor">
-      <div class="canvas-container">
-        <canvas id="meme"></canvas>
+    <section
+      class="meme-editor flex flex-row space-between align-center hidden"
+    >
+      <div
+        class="canvas-container flex flex-column justify-center align-center"
+      >
+        <canvas height="500px" width="500px" id="meme"></canvas>
       </div>
-      <div class="edit-section"></div>
+      <div class="editor-section flex flex-column justify-center align-center">
+        <input type="text" class="txt-contnt" placeholder="Text line..." />
+        <div class="editor-btns">
+          <button onclick="onSwitchLines()" class="edit-btn switch-btn">
+            <i class="fas fa-arrows-alt-v"></i>
+          </button>
+          <button onclick="onAddLine()">
+            <i class="fas fa-plus"></i>
+          </button>
+          <button onclick="onRemoveLine()">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+          <button onclick="onChangeTextAlignmentCenter()">
+            <i class="fa-solid fa-align-center"></i>
+          </button>
+          <button onclick="onChangeTextAlignmentLeft()">
+            <i class="fa-solid fa-align-left"></i>
+          </button>
+          <button onclick="onChangeTextAlignmentRight()">
+            <i class="fa-solid fa-align-right"></i>
+          </button>
+          <button onclick="onChangeColor()">
+            <i class="fa-solid fa-palette"></i>
+          </button>
+        </div>
+      </div>
     </section>
-    <script src="/js/controller/main-controller.js"></script>
+
     <script src="/js/service/gallery-service.js"></script>
+    <script src="/js/service/meme-services.js"></script>
+    <script src="/js/controller/gallery-controller.js"></script>
+    <script src="/js/controller/meme-controller.js"></script>
+    <!-- <script src="/js/service/editor-service.js"></script> -->
   </body>
 </html>

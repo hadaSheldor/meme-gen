@@ -1,5 +1,4 @@
 * {
-  background-color: var(--clr1);
   box-sizing: border-box;
 }
 
@@ -12,10 +11,20 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: var(--clr1);
+}
+
+.hidden {
+  display: none;
 }
 
 .logo {
-  height: 20px;
+  height: 25px;
   cursor: pointer;
-  margin-inline-start: 20px;
+  margin-inline-start: 10px;
+}
+
+/* TODO: Decide if linkable or not */
+.logo:hover {
+  height: 30px;
 }

@@ -1,0 +1,26 @@
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 90%;
+  height: 70px;
+  background-color: var(--clr4);
+  border-radius: 40px;
+  padding: 20px;
+}
+
+header button {
+  cursor: pointer;
+  border: none;
+  font-family: Poppins, sans-serif;
+  border-radius: 20px;
+  height: 40px;
+  padding: 10px 20px;
+  background-color: var(--clr6);
+  color: var(--clr4);
+}
+
+button:hover {
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.322);
+}

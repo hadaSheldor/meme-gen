@@ -96,3 +96,15 @@ let gImages = [
 function getImgs() {
   return gImages
 }
+
+function getImgById(imgId) {
+  return gImages.find((img) => img.id === imgId)
+}
+
+function setSelectedImg(id) {
+  let memes = getMemes()
+  memes.selectedImgId = id
+  createMeme(id)
+  console.log(memes)
+  renderMeme()
+}

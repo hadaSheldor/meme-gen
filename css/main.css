@@ -1,4 +1,7 @@
-@import url("/css/general.css");
-@import url("/css/gallery.css");
+@import url("/css/basic/general.css");
+@import url("/css/components/gallery.css");
 @import url("/css/setup/vars.css");
 @import url("/css/setup/typography.css");
+@import url("/css/components/header.css");
+@import url("/css/components/canvas.css");
+@import url("/css/basic/helpers.css");
