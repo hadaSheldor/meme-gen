@@ -13,7 +13,7 @@ function renderGallery() {
 
   let strHTML = imgs.map((img) => {
     return `<div>
-        <img class="gallery-img" src="${img.url}" onclick="onSelectImg(${img.id})">
+        <img class="gallery-img" src="${img.url}" onclick="onImgSelect(${img.id})">
     </div>`
   })
   elGallery.innerHTML = strHTML.join("")
@@ -28,7 +28,7 @@ function onMoveToPage(target) {
   document.querySelector(`.${target}`).classList.remove("hidden")
 }
 
-function onSelectImg(idx) {
+function onImgSelect(idx) {
   let imgUrl = getImgById(idx).url
   onMoveToPage("meme-editor")
   setSelectedImg(idx)
