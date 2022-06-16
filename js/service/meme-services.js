@@ -6,10 +6,6 @@ function getMemes() {
   return gMemes
 }
 
-function drawText(txt, x, y) {
-  console.log(txt)
-}
-
 function createMeme(imgId) {
   let meme = {
     selectedImgId: imgId,
@@ -20,18 +16,45 @@ function createMeme(imgId) {
         align: "center",
         size: 40,
         stroke: "black",
-        color: "white",
+        color: "black",
+        pos: { x: 100, y: 100 },
       },
       {
         txt: "BUTTOM - type second line",
         align: "center",
         size: 40,
-        stroke: "black",
-        color: "white",
+        stroke: "blcak",
+        color: "black",
+        pos: { x: 100, y: 100 },
       },
     ],
   }
   gMemes = meme
-  drawText(gMemes.lines[0].txt)
   return meme
+}
+
+function setLinePos() {
+  let memes = getMemes()
+  memes.lines[0].pos = {
+    x: gElCanvas.width / 2,
+    y: 70,
+  }
+  memes.lines[1].pos = {
+    x: gElCanvas.width / 2,
+    y: 70,
+  }
+  renderCanvas()
+}
+
+function setLineTxt(txt) {
+  gMemes.lines[0].txt = txt
+  renderCanvas()
+}
+
+function setTextColor(color) {
+  console.log(color)
+  gMemes.lines[0].color = color
+  gMemes.lines[0].stroke = color
+  console.log(gMemes)
+  renderCanvas()
 }

@@ -14,7 +14,10 @@
         <button class="btn btn-gal" onclick="onMoveToPage('meme-gallery')">
           Gallery
         </button>
-        <button class="btn btn-memes" onclick="onMoveToPage('meme-editor')">
+        <button
+          class="btn btn-memes"
+          onclick="onMoveToPage('meme-editor'); renderCanvas()"
+        >
           Memes
         </button>
         <button class="btn btn-about">Abount</button>
@@ -34,7 +37,12 @@
         <canvas height="500px" width="500px" id="meme"></canvas>
       </div>
       <div class="editor-section flex flex-column justify-center align-center">
-        <input type="text" class="txt-contnt" placeholder="Text line..." />
+        <input
+          type="text"
+          class="txt-contnt"
+          placeholder="Text line..."
+          oninput="onUpdateTxt(event)"
+        />
         <div class="editor-btns">
           <button onclick="onSwitchLines()" class="edit-btn switch-btn">
             <i class="fas fa-arrows-alt-v"></i>
@@ -54,9 +62,11 @@
           <button onclick="onChangeTextAlignmentRight()">
             <i class="fa-solid fa-align-right"></i>
           </button>
-          <button onclick="onChangeColor()">
-            <i class="fa-solid fa-palette"></i>
-          </button>
+          <input
+            type="color"
+            name="change-color"
+            onclick="onChangeColor(this.value)"
+          />
         </div>
       </div>
     </section>
@@ -69,6 +79,5 @@
     <script src="./js/service/meme-services.js"></script>
     <script src="./js/controller/gallery-controller.js"></script>
     <script src="./js/controller/meme-controller.js"></script>
-    <!-- <script src="/js/service/editor-service.js"></script> -->
   </body>
 </html>

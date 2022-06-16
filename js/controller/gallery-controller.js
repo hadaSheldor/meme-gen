@@ -1,11 +1,17 @@
 "use strict"
 
 const PAGES = ["meme-gallery", "meme-editor"]
-let gCurrImg
+// TEST: adding gCurrImg
 
 function init() {
+  // TODO: addListeners()
   renderGallery()
 }
+
+// for SEARCH
+// TODO: Add renderKeyWords FN
+// TODO: Add renderSavedMemes FN
+// TODO: Add eventListeners FNs
 
 function renderGallery() {
   const imgs = getImgs()
@@ -33,4 +39,5 @@ function onImgSelect(idx) {
   setSelectedImg(idx)
   onMoveToPage("meme-editor")
   setImg(imgUrl)
+  renderCanvas()
 }

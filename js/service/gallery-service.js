@@ -105,6 +105,5 @@ function setSelectedImg(id) {
   let memes = getMemes()
   memes.selectedImgId = id
   createMeme(id)
-  console.log(memes)
-  renderMeme()
+  renderCanvas()
 }
