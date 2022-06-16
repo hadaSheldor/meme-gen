@@ -6,6 +6,10 @@ function getMemes() {
   return gMemes
 }
 
+function drawText(txt, x, y) {
+  console.log(txt)
+}
+
 function createMeme(imgId) {
   let meme = {
     selectedImgId: imgId,
@@ -27,6 +31,7 @@ function createMeme(imgId) {
       },
     ],
   }
-  gMemes.push(meme)
+  gMemes = meme
+  drawText(gMemes.lines[0].txt)
   return meme
 }

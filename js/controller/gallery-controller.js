@@ -30,7 +30,7 @@ function onMoveToPage(target) {
 
 function onImgSelect(idx) {
   let imgUrl = getImgById(idx).url
-  onMoveToPage("meme-editor")
   setSelectedImg(idx)
+  onMoveToPage("meme-editor")
   setImg(imgUrl)
 }
