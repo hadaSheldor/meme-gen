@@ -24,6 +24,7 @@
       </nav>
     </header>
 
+    <!-- TODO: Consider using grid -->
     <main class="meme-gallery">
       <div class="images-container"></div>
     </main>
@@ -41,7 +42,7 @@
           type="text"
           class="txt-contnt"
           placeholder="Text line..."
-          oninput="onUpdateTxt(event)"
+          oninput="onUpdateTxt(this.value)"
         />
         <div class="editor-btns">
           <button onclick="onSwitchLines()" class="edit-btn switch-btn">
@@ -65,7 +66,7 @@
           <input
             type="color"
             name="change-color"
-            onclick="onChangeColor(this.value)"
+            oninput="onChangeColor(this.value)"
           />
         </div>
       </div>

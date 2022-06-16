@@ -29,10 +29,10 @@ function setText(meme) {
   gCtx.strokeText(txt, posX, posY)
 }
 
-function onUpdateTxt(ev) {
-  setLineTxt(ev.target.value)
+function onUpdateTxt(val) {
+  setLineTxt(val)
   setText(gMemes)
-  console.log(ev.target.value)
+  console.log(val)
 }
 
 function onChangeColor(color) {
