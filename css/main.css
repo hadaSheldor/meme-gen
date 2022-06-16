@@ -1,7 +1,7 @@
-@import url("/css/basic/general.css");
-@import url("/css/components/gallery.css");
-@import url("/css/setup/vars.css");
-@import url("/css/setup/typography.css");
-@import url("/css/components/header.css");
-@import url("/css/components/canvas.css");
-@import url("/css/basic/helpers.css");
+@import "basic/general.css";
+@import "components/gallery.css";
+@import "setup/vars.css";
+@import "setup/typography.css";
+@import "components/header.css";
+@import "components/canvas.css";
+@import "basic/helpers.css";
