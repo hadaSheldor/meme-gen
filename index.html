@@ -14,7 +14,7 @@
       <div class="logo">
         <img src="images/LOGO.png" alt="" class="logo" />
       </div>
-      <nav class="main-nav flex clean-list">
+      <nav class="main-nav flex space-between clean-list">
         <button class="btn btn-gal" onclick="onMoveToPage('meme-gallery')">
           Gallery
         </button>
@@ -25,45 +25,46 @@
           Memes
         </button>
       </nav>
-      <button onclick="toggleMenu()" class="btn menu-toggle">☰</button>
+      <div>
+        <button onclick="toggleMenu()" class="btn menu-toggle">☰</button>
+      </div>
     </header>
 
-    <!-- TODO: Consider using grid -->
     <main class="meme-gallery main-layout">
       <div class="images-container"></div>
     </main>
 
-    <!-- <section
-      class="meme-editor flex flex-row space-between align-center hidden"
-    > -->
     <section class="meme-editor flex hidden">
-      <!-- <div
-        class="canvas-container flex flex-column justify-center align-center"
-      > -->
-      <div class="canvas-container">
+      <div class="canvas-container flex flex-column">
         <canvas height="500px" width="500px" id="meme"></canvas>
       </div>
-      <div class="editor-section flex flex-column justify-center align-center">
-        <input
-          type="text"
-          class="txt-input"
-          placeholder="Text line..."
-          oninput="onUpdateTxt(this.value)"
-        />
 
-        <div class="editor-btns">
-          <div>
+      <div class="editor-btns">
+        <div
+          class="editor-section flex flex-column justify-center align-center"
+        >
+          <input
+            type="text"
+            class="txt-input"
+            placeholder="Text line..."
+            oninput="onUpdateTxt(this.value)"
+          />
+          <div class="flex justify-center align-center">
             <button onclick="onSwitchLines()" class="edit-btn switch-btn">
               <i class="fas fa-arrows-alt-v"></i>
             </button>
             <button onclick="onAddLine()" class="edit-btn">
               <i class="fas fa-plus"></i>
             </button>
+            </button>
+            <button onclick="onAddLine()" class="edit-btn">
+              <i class="fas fa-minus"></i>
+            </button>
             <button onclick="onRemoveLine()" class="edit-btn">
               <i class="fas fa-trash-alt"></i>
             </button>
           </div>
-          <div>
+          <div class="flex justify-center align-center">
             <button onclick="onChangeTextAlignmentCenter()" class="edit-btn">
               <i class="fa-solid fa-align-center"></i>
             </button>
@@ -73,14 +74,14 @@
             <button onclick="onChangeTextAlignmentRight()" class="edit-btn">
               <i class="fa-solid fa-align-right"></i>
             </button>
+            <input
+              class="color-input"
+              type="color"
+              value="#FE6E20"
+              name="change-color"
+              oninput="onChangeColor(this.value)"
+            />
           </div>
-          <input
-            class="color-input"
-            type="color"
-            value="#FE6E20"
-            name="change-color"
-            oninput="onChangeColor(this.value)"
-          />
         </div>
       </div>
     </section>

@@ -29,8 +29,9 @@ function onMoveToPage(target) {
   //
   PAGES.forEach((page) => {
     document.querySelector(`.${page}`).classList.add("hidden")
+    // document.querySelector(".main-screen").classList.add("hidden")
+    // toggleMenu()
   })
-  // TODO: test if flex helper solves hidden class
   document.querySelector(`.${target}`).classList.remove("hidden")
 }
 

@@ -21,13 +21,7 @@
   cursor: pointer;
   opacity: 0;
   pointer-events: none;
-
   transition: opacity 0.6s;
-}
-
-body.menu-open .main-screen {
-  pointer-events: auto;
-  opacity: 1;
 }
 
 .meme-layout {
@@ -49,14 +43,8 @@ body {
 }
 
 .logo {
-  height: 25px;
-  cursor: pointer;
+  height: 35px;
   margin-inline-start: 10px;
-}
-
-/* TODO: Decide if linkable or not */
-.logo:hover {
-  height: 30px;
 }
 
 img {
