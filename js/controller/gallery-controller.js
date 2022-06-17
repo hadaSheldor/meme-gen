@@ -41,3 +41,7 @@ function onImgSelect(idx) {
   setImg(imgUrl)
   renderCanvas()
 }
+
+function toggleMenu() {
+  document.body.classList.toggle("menu-open")
+}

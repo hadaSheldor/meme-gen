@@ -1,26 +1,26 @@
 .main-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  width: 90%;
-  height: 70px;
+  max-height: 50px;
   background-color: var(--clr4);
-  border-radius: 40px;
+  border-radius: 30px;
   padding: 20px;
 }
 
-header button {
+.main-header .main-nav > *:not(:last-child) {
+  margin-inline-start: 300px;
+}
+
+.main-header .btn {
   cursor: pointer;
   border: none;
   font-family: Poppins, sans-serif;
-  border-radius: 20px;
+  border-radius: 30px;
   height: 40px;
-  padding: 10px 20px;
+  margin: 0 auto;
+  padding: 5px 15px;
   background-color: var(--clr6);
   color: var(--clr4);
 }
 
-button:hover {
+.btn:hover {
   box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.322);
 }

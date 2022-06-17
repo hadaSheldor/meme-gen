@@ -17,13 +17,13 @@ function setImg(url) {
 }
 
 function setText(meme) {
-  let txt = meme.lines[0].txt
-  let posX = meme.lines[0].pos.x
-  let posY = meme.lines[0].pos.y
+  let txt = meme.lines[meme.selectedLineIdx].txt
+  let posX = meme.lines[meme.selectedLineIdx].pos.x
+  let posY = meme.lines[meme.selectedLineIdx].pos.y
 
   gCtx.lineWidth = 2
-  gCtx.strokeStyle = meme.lines[0].stroke
-  gCtx.fillStyle = meme.lines[0].color
+  gCtx.strokeStyle = meme.lines[meme.selectedLineIdx].stroke
+  gCtx.fillStyle = meme.lines[meme.selectedLineIdx].color
   gCtx.font = "40px Arial"
   gCtx.fillText(txt, posX, posY)
   gCtx.strokeText(txt, posX, posY)

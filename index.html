@@ -8,9 +8,13 @@
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body onload="init()">
-    <header class="main-header">
-      <img src="images/LOGO.png" alt="" class="logo" />
-      <nav>
+    <div class="main-screen" onclick="toggleMenu()"></div>
+
+    <header class="main-header main-layout flex align-center space-between">
+      <div class="logo">
+        <img src="images/LOGO.png" alt="" class="logo" />
+      </div>
+      <nav class="main-nav flex clean-list">
         <button class="btn btn-gal" onclick="onMoveToPage('meme-gallery')">
           Gallery
         </button>
@@ -20,51 +24,60 @@
         >
           Memes
         </button>
-        <button class="btn btn-about">Abount</button>
       </nav>
+      <button onclick="toggleMenu()" class="btn menu-toggle">☰</button>
     </header>
 
     <!-- TODO: Consider using grid -->
-    <main class="meme-gallery">
+    <main class="meme-gallery main-layout">
       <div class="images-container"></div>
     </main>
 
-    <section
+    <!-- <section
       class="meme-editor flex flex-row space-between align-center hidden"
-    >
-      <div
+    > -->
+    <section class="meme-editor flex hidden">
+      <!-- <div
         class="canvas-container flex flex-column justify-center align-center"
-      >
+      > -->
+      <div class="canvas-container">
         <canvas height="500px" width="500px" id="meme"></canvas>
       </div>
       <div class="editor-section flex flex-column justify-center align-center">
         <input
           type="text"
-          class="txt-contnt"
+          class="txt-input"
           placeholder="Text line..."
           oninput="onUpdateTxt(this.value)"
         />
+
         <div class="editor-btns">
-          <button onclick="onSwitchLines()" class="edit-btn switch-btn">
-            <i class="fas fa-arrows-alt-v"></i>
-          </button>
-          <button onclick="onAddLine()">
-            <i class="fas fa-plus"></i>
-          </button>
-          <button onclick="onRemoveLine()">
-            <i class="fas fa-trash-alt"></i>
-          </button>
-          <button onclick="onChangeTextAlignmentCenter()">
-            <i class="fa-solid fa-align-center"></i>
-          </button>
-          <button onclick="onChangeTextAlignmentLeft()">
-            <i class="fa-solid fa-align-left"></i>
-          </button>
-          <button onclick="onChangeTextAlignmentRight()">
-            <i class="fa-solid fa-align-right"></i>
-          </button>
+          <div>
+            <button onclick="onSwitchLines()" class="edit-btn switch-btn">
+              <i class="fas fa-arrows-alt-v"></i>
+            </button>
+            <button onclick="onAddLine()" class="edit-btn">
+              <i class="fas fa-plus"></i>
+            </button>
+            <button onclick="onRemoveLine()" class="edit-btn">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </div>
+          <div>
+            <button onclick="onChangeTextAlignmentCenter()" class="edit-btn">
+              <i class="fa-solid fa-align-center"></i>
+            </button>
+            <button onclick="onChangeTextAlignmentLeft()" class="edit-btn">
+              <i class="fa-solid fa-align-left"></i>
+            </button>
+            <button onclick="onChangeTextAlignmentRight()" class="edit-btn">
+              <i class="fa-solid fa-align-right"></i>
+            </button>
+          </div>
           <input
+            class="color-input"
             type="color"
+            value="#FE6E20"
             name="change-color"
             oninput="onChangeColor(this.value)"
           />
