@@ -6,7 +6,7 @@
 }
 
 .main-header .main-nav > *:not(:last-child) {
-  margin-inline-start: 300px;
+  margin-inline-end: 20px;
 }
 
 .main-header .btn {
@@ -16,7 +16,7 @@
   font-size: 18px;
   border-radius: 40px;
   height: 40px;
-  /* margin: 0 auto; */
+  margin: 0 auto;
   padding: 5px 15px;
   background-color: var(--clr6);
   color: var(--clr4);
@@ -24,5 +24,5 @@
 }
 
 .btn:hover {
-  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.322);
+  box-shadow: 0 0 15px 1px var(--clr1);
 }

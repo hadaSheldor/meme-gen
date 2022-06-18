@@ -1,17 +1,11 @@
 "use strict"
 
 const PAGES = ["meme-gallery", "meme-editor"]
-// TEST: adding gCurrImg
+let gCurrImg
 
 function init() {
-  // TODO: addListeners()
   renderGallery()
 }
-
-// for SEARCH
-// TODO: Add renderKeyWords FN
-// TODO: Add renderSavedMemes FN
-// TODO: Add eventListeners FNs
 
 function renderGallery() {
   const imgs = getImgs()
@@ -25,24 +19,24 @@ function renderGallery() {
   elGallery.innerHTML = strHTML.join("")
 }
 
+function onImgSelect(idx) {
+  gCurrImg = getImgById(idx)
+  setSelectedImg(idx)
+  renderMeme()
+  onMoveToPage("meme-editor")
+}
+
 function onMoveToPage(target) {
-  //
   PAGES.forEach((page) => {
     document.querySelector(`.${page}`).classList.add("hidden")
-    // document.querySelector(".main-screen").classList.add("hidden")
-    // toggleMenu()
   })
   document.querySelector(`.${target}`).classList.remove("hidden")
 }
 
-function onImgSelect(idx) {
-  let imgUrl = getImgById(idx).url
-  setSelectedImg(idx)
-  onMoveToPage("meme-editor")
-  setImg(imgUrl)
-  renderCanvas()
-}
-
 function toggleMenu() {
   document.body.classList.toggle("menu-open")
+}
+
+function getCurrImg() {
+  return gCurrImg
 }

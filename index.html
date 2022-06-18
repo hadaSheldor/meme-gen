@@ -12,37 +12,43 @@
 
     <header class="main-header main-layout flex align-center space-between">
       <div class="logo">
-        <img src="images/LOGO.png" alt="" class="logo" />
+        <img src="images/LOGO.png" alt="logo" class="logo" />
       </div>
-      <nav class="main-nav flex space-between clean-list">
-        <button class="btn btn-gal" onclick="onMoveToPage('meme-gallery')">
+
+      <nav class="main-nav flex clean-list">
+        <button 
+          class="btn btn-gal" onclick="onMoveToPage('meme-gallery'); renderGallery()">
           Gallery
         </button>
         <button
-          class="btn btn-memes"
-          onclick="onMoveToPage('meme-editor'); renderCanvas()"
-        >
+          class="btn btn-memes" onclick="onMoveToPage('meme-editor'); renderEditor()">
           Memes
         </button>
+        <button
+          class="btn btn-saved" onclick="onMoveToPage('meme-gallery'); renderSaved()">
+          Saved
+        </button>
       </nav>
+
+      <!-- Burger-menu -->
       <div>
         <button onclick="toggleMenu()" class="btn menu-toggle">☰</button>
       </div>
     </header>
 
+    <!-- Gallery -->
     <main class="meme-gallery main-layout">
       <div class="images-container"></div>
     </main>
 
+    <!-- Editor -->
     <section class="meme-editor flex hidden">
       <div class="canvas-container flex flex-column">
         <canvas height="500px" width="500px" id="meme"></canvas>
       </div>
 
       <div class="editor-btns">
-        <div
-          class="editor-section flex flex-column justify-center align-center"
-        >
+        <div class="editor-section flex flex-column justify-center align-center">
           <input
             type="text"
             class="txt-input"
@@ -50,46 +56,73 @@
             oninput="onUpdateTxt(this.value)"
           />
           <div class="flex justify-center align-center">
-            <button onclick="onSwitchLines()" class="edit-btn switch-btn">
+            <button onclick="onAddLine()" class="edit-btn switch-btn tooltip">
               <i class="fas fa-arrows-alt-v"></i>
+              <span class="tooltiptext">Switch Lines</span>
             </button>
-            <button onclick="onAddLine()" class="edit-btn">
+            <button onclick="onChangeTxtSize(4)" class="edit-btn tooltip">
               <i class="fas fa-plus"></i>
+              <span class="tooltiptext">A+</span>
             </button>
             </button>
-            <button onclick="onAddLine()" class="edit-btn">
+            <button onclick="onChangeTxtSize(-4)" class="edit-btn tooltip">
               <i class="fas fa-minus"></i>
+              <span class="tooltiptext">A-</span>
             </button>
-            <button onclick="onRemoveLine()" class="edit-btn">
+            <button onclick="onRemoveLine()" class="edit-btn tooltip">
               <i class="fas fa-trash-alt"></i>
+              <span class="tooltiptext">Delete Line</span>
+            </button>
+            <button onclick="onSaveMeme()" class="edit-btn tooltip">
+              <i class="fa-solid fa-save"></i>
+              <span class="tooltiptext">Save Meme</span>
             </button>
           </div>
           <div class="flex justify-center align-center">
-            <button onclick="onChangeTextAlignmentCenter()" class="edit-btn">
-              <i class="fa-solid fa-align-center"></i>
-            </button>
-            <button onclick="onChangeTextAlignmentLeft()" class="edit-btn">
+            <button onclick="onChangeTextAlignment('left')" class="edit-btn">
               <i class="fa-solid fa-align-left"></i>
             </button>
-            <button onclick="onChangeTextAlignmentRight()" class="edit-btn">
+            <button onclick="onChangeTextAlignment('center')" class="edit-btn active">
+              <i class="fa-solid fa-align-center"></i>
+            </button>
+            <button onclick="onChangeTextAlignment('right')" class="edit-btn">
               <i class="fa-solid fa-align-right"></i>
             </button>
+        
+
             <input
               class="color-input"
               type="color"
-              value="#FE6E20"
+              value="#F8312F"
               name="change-color"
               oninput="onChangeColor(this.value)"
             />
+            <input
+              class="color-input"
+              type="color"
+              value="white"
+              name="change-color"
+              oninput="onChangeStrokeColor(this.value)"
+            />
+          </div>
+          <div class="emoji-container flex justify-center align-center">
+            <button class="sticker-btn emoji-btn" onclick="onSticker('🐘')">🐘</button>
+            <button class="sticker-btn emoji-btn" onclick="onSticker('🌞')">🌞</button>
+            <button class="sticker-btn emoji-btn" onclick="onSticker('🥑')">🥑</button>
+            <button class="sticker-btn emoji-btn" onclick="onSticker('🍬')">🍬</button>
           </div>
         </div>
       </div>
     </section>
 
-    <script
-      src="https://kit.fontawesome.com/764500184e.js"
-      crossorigin="anonymous"
-    ></script>
+    <footer>
+      <div class="footer main-layout flex justify-center align-center">
+        <p >© coffeerights Hadas Shmaryahu - 2022 🐘</p>
+      </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/764500184e.js" crossorigin="anonymous"></script>
+    <script src="./js/service/storage-service.js"></script>
     <script src="./js/service/gallery-service.js"></script>
     <script src="./js/service/meme-services.js"></script>
     <script src="./js/controller/gallery-controller.js"></script>

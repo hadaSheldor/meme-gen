@@ -1,6 +1,7 @@
 .meme-gallery {
   width: 100%;
   border-radius: 50px;
+  transition: 0.6s;
 }
 
 .gallery-img {
@@ -10,14 +11,14 @@
 
 .gallery-img:hover {
   opacity: 0.9;
-  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.422);
+  box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.422);
 }
 
 .images-container {
   margin-top: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 150px));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
   justify-content: space-around;
   gap: 15px;
-  transition: 0.4s;
+  transition: 0.7s;
 }

@@ -5,8 +5,10 @@
   margin: 0 auto;
   margin-top: 20px;
   justify-content: center;
-  width: 80%;
+  width: 100%;
   gap: 20px;
+  min-height: 100vh;
+  transition: 0.6s;
 }
 
 .editor-section {
@@ -32,6 +34,7 @@ canvas {
   flex-wrap: wrap;
 }
 
+/* Editor btns */
 .edit-btn {
   font-size: 30px;
   color: var(--clr4);
@@ -43,16 +46,45 @@ canvas {
   width: 40px;
   padding: 5px;
   background-color: var(--clr6);
+  transition: 0.6s;
 }
 
 .edit-btn:hover {
   box-shadow: 0 0 10px 1px var(--clr3);
 }
 
+/* Emojis */
+.emoji-container {
+  background-color: var(--clr6);
+  border: none;
+  border-radius: 30px;
+  width: 70%;
+  height: 50px;
+  margin-top: 20px;
+  padding-bottom: 5px;
+}
+
+.emoji-btn {
+  font-size: 30px;
+  border: none;
+  margin: 7px;
+  cursor: pointer;
+  border-radius: 10px;
+  height: 40px;
+  width: 40px;
+  background-color: var(--clr6);
+  transition: 0.6s;
+}
+
+.emoji-btn:hover {
+  font-size: 35px;
+}
+
+/* Inputs */
 .color-input {
   height: 40px;
   width: 40px;
-  padding: 2px;
+  padding: 4px;
   margin: 7px;
   border: none;
   border-radius: 10px;
@@ -65,17 +97,61 @@ canvas {
 
 .txt-input {
   width: 70%;
+  height: 10%;
   border: none;
-  border-radius: 10px;
-  height: 30px;
+  border-radius: 20px;
   padding: 10px;
   margin-bottom: 20px;
   color: var(--clr6);
   border: 2px solid var(--clr3);
   background-color: var(--clr1);
   font-size: large;
+  text-align: center;
+  outline: none;
 }
 
 .txt-input:hover {
   box-shadow: 0 0 10px 1px var(--clr3);
+}
+
+/* Tooltips */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border: none;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 80px;
+  background-color: var(--clr3);
+  color: var(--clr4);
+  text-align: center;
+  border-radius: 20px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.9s;
+  font-size: 15px;
+  box-shadow: 0 0 10px 1px var(--clr3);
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--clr3) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }

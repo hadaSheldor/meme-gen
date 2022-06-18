@@ -18,10 +18,6 @@
   flex-direction: column;
 }
 
-.flex.flex-row {
-  flex-direction: row;
-}
-
 .flex.hidden {
   display: none;
 }

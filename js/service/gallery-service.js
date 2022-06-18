@@ -101,9 +101,9 @@ function getImgById(imgId) {
   return gImages.find((img) => img.id === imgId)
 }
 
-function setSelectedImg(id) {
+function setSelectedImg(imgId) {
   let memes = getMemes()
-  memes.selectedImgId = id
-  createMeme(id)
-  renderCanvas()
+  memes.selectedImgId = imgId
+  createMeme(imgId)
+  renderEditor()
 }

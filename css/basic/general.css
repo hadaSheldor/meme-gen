@@ -10,7 +10,6 @@
   box-sizing: content-box;
 }
 
-/* opening menu */
 .main-screen {
   position: fixed;
   top: 0;
@@ -38,10 +37,6 @@ body {
   background-color: var(--clr1);
 }
 
-.hidden {
-  display: none;
-}
-
 .logo {
   height: 35px;
   margin-inline-start: 10px;
@@ -49,4 +44,17 @@ body {
 
 img {
   width: 100%;
+}
+
+.footer {
+  text-align: center;
+  background-color: var(--clr7);
+  border-radius: 10px;
+  margin: 10px auto;
+  flex-flow: column;
+  line-height: 1.5rem;
+}
+
+.hidden {
+  display: none;
 }
