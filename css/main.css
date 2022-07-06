@@ -1,8 +1,8 @@
+@import "basic/helpers.css";
 @import "basic/general.css";
 @import "components/gallery.css";
 @import "setup/vars.css";
 @import "setup/typography.css";
 @import "components/header.css";
 @import "components/canvas.css";
-@import "basic/helpers.css";
 @import "media/mq.css";

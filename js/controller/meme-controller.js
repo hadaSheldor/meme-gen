@@ -11,6 +11,7 @@ function renderEditor() {
   addEventsListeners()
 }
 
+// TODO: Refunction this method (forEach)
 function renderSaved() {
   const savedMemes = _loadFromStorage()
   const elGallery = document.querySelector(".images-container")
@@ -83,11 +84,13 @@ function onChangeTxtSize(diff) {
 }
 
 function onChangeFont() {
+  // TODO: Add FN for changing fonts
   toggleFonts()
   renderMeme()
 }
 
 function onChangeTextAlignment(val) {
+  // TEST: Update alignment (i.e. check canvas borders etc)
   setTextAlignment(val)
   renderMeme()
 }

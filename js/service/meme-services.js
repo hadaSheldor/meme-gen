@@ -29,7 +29,7 @@ function createMeme(imgId) {
         font: "Impact",
         color: "#f8312f",
         stroke: "black",
-        pos: { x: 200, y: 70 },
+        pos: { x: elCanvas.width / 2, y: 150 },
         isDrag: false,
       },
       {
@@ -39,7 +39,7 @@ function createMeme(imgId) {
         font: "Impact",
         color: "#f8312f",
         stroke: "black",
-        pos: { x: 200, y: 450 },
+        pos: { x: 10, y: 50 },
         isDrag: false,
       },
     ],
@@ -107,6 +107,7 @@ function addSticker(val) {
     isDrag: false,
   }
   meme.lines.push(sticker)
+  console.log(gMemes)
   return sticker
 }
 
